@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CrestComms</title>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCvWhSnAWqFJKSBpZnGrRPEQ96CdBHR2lA"></script>
+    <style>
+        #map {
+            height: 500px;
+            width: 50%;
+        }
+    </style>
+</head>
+<body onload="initMap()">
+    <h1>Create post:</h1>
+    <h2>Title:</h2>
+    <textarea id="title"></textarea>
+    <h2>Description:</h2>
+    <textarea id="description"></textarea>
+    <h2>Category:</h2>
+    <select id="category">
+        <option value="1">Emergency</option>
+        <option value="2">Car Crash</option>
+        <option value="3">Social Event</option>
+        <option value="4">Local Business</option>
+        <option value="5">Volunteering</option>
+    </select>
+    <button id="submit" onclick="submitPost()">Submit</button>
+    <div id="map"></div>
+    <h1>Other posts:</h1>
+</body>
+<script src="static/js/main.js"></script>
+</html>
