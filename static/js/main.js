@@ -7,10 +7,10 @@ let title = '';
 let desc = '';
 
 const colorCodes = {
-    "1" : "static/img/icons/carcrash.png",
-    "2" : "static/img/icons/emergency.png",
-    "3" : "static/img/icons/localbusiness.png",
-    "4" : "static/img/icons/socialevent.png",
+    "2" : "static/img/icons/carcrash.png",
+    "1" : "static/img/icons/emergency.png",
+    "4" : "static/img/icons/localbusiness.png",
+    "3" : "static/img/icons/socialevent.png",
     "5" : "static/img/icons/volunteering.png",
 }
 
