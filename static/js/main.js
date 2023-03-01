@@ -7,11 +7,11 @@ let title = '';
 let desc = '';
 
 const colorCodes = {
-    "1" : "red",
-    "2" : "orange",
-    "3" : "purple",
-    "4" : "black",
-    "5" : "yellow",
+    "1" : "static/img/icons/carcrash.png",
+    "2" : "static/img/icons/emergency.png",
+    "3" : "static/img/icons/localbusiness.png",
+    "4" : "static/img/icons/socialevent.png",
+    "5" : "static/img/icons/volunteering.png",
 }
 
 function initMap() {
@@ -24,18 +24,20 @@ function initMap() {
 
     // Create marker on click
     google.maps.event.addListener(map, 'click', function(event) {
-        if (checkArgs()) {
-            latitude = event.latLng.lat();
-            longitude = event.latLng.lng();
-            if (marker) {
-                marker.setMap(null);
-            }
-            marker = new google.maps.Marker({
-                position: { lat: latitude, lng: longitude },
-                map: map,
-            });
-            console.log("Latitude: " + latitude + " Longitude: " + longitude);
+
+        latitude = event.latLng.lat();
+        longitude = event.latLng.lng();
+        flair = document.getElementById("category").value;
+        if (marker) {
+            marker.setMap(null);
         }
+        marker = new google.maps.Marker({
+            position: { lat: latitude, lng: longitude },
+            map: map,
+            icon: colorCodes[flair]
+        });
+        console.log("Latitude: " + latitude + " Longitude: " + longitude);
+        
     });
 }
 
@@ -55,7 +57,7 @@ function submitPost() {
 
 function checkArgs() {
     // Check if empty
-    let arguments = [title, desc];
+    let arguments = [title, desc, latitude, longitude];
     for (let i = 0; i < arguments.length; i++) {
         if (arguments[i] === '') {
             alert("Please fill in all the categories");
