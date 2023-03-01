@@ -49,7 +49,7 @@ function submitPost() {
 
     // Check if empty;
     if (checkArgs()) {
-        alert("Done!")
+        // Yatin do the post thing here
     } else {
         console.log("Not ready");
     }
